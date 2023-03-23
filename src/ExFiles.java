@@ -47,7 +47,7 @@ public class ExFiles
   }
   public static void PrintWriter_writeToFile()
   {
-    PrintWriter writer1 =null;      
+    PrintWriter writer1 = null;
     try{
       writer1 = new PrintWriter(new File("testout.txt"));  
     } catch  (FileNotFoundException e)

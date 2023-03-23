@@ -25,6 +25,7 @@ abstract class Appender
 public class Main_AbstractClassFileIOExceptions
 {
   //-Inner Class
+  // Creating a user/programmer defined exception
   static class OverwriteException extends IOException
   {
     public OverwriteException(String message)
@@ -40,7 +41,7 @@ public class Main_AbstractClassFileIOExceptions
   {
     public void write(String text) throws OverwriteException, IOException
     {
-      File file  = new File("text.txt");
+      File file  = new File("./data/file_appender_output.txt");
       if(file.exists())
       {
         throw new OverwriteException("File already exists. Use the append method in ...");
@@ -61,7 +62,9 @@ public class Main_AbstractClassFileIOExceptions
     }
     try
     {
-      FileInputStream in = new FileInputStream("test.txt");
+      //error: java.io.FileNotFoundException: test.txt (The system cannot find the file specified)
+      //fix  : create a file text.text in ./data/
+      FileInputStream in = new FileInputStream("./data/test_this_should_exist.txt");
       int data = in.read();
       while(data != -1)
       {
