@@ -6,8 +6,17 @@ public class Main
 {
     public static void main(String[] Args)
     {
-        Examples e = new Examples();
         System.out.println("main: hello world");
+        
+        Examples ex      = new Examples();
+        ExFiles  exFiles = new ExFiles();
+        
+        exFiles.File_Scanner_readFileAndPrint();
+        exFiles.PrintWriter_writeToConsole();
+        exFiles.PrintWriter_writeToFile();
+        //exFiles.File_deleteFile();
+        
+        
         return;
     }
 }
