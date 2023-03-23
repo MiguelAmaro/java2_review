@@ -3,6 +3,7 @@
 set PROJ_DIR=%cd%
 set FLAGS=--class-path %PROJ_DIR%\build
 
-java %FLAGS% com.main.Main
+rem java %FLAGS% com.main.Main
+java %FLAGS% com.midterm.Main
 
 :eof
