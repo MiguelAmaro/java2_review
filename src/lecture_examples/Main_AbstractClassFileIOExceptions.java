@@ -1,4 +1,4 @@
-package lecture_examples.abstractclass_fileio_exceptions;
+package com.lecture_examples.abstractclass_fileio_exceptions;
 //- Review Question 
 // A) Hello World
 // B) File already exists. Use the append method instead (correct)
@@ -25,7 +25,7 @@ abstract class Appender
 public class Main_AbstractClassFileIOExceptions
 {
   //-Inner Class
-  static class OverwriteException extends Exception
+  static class OverwriteException extends IOException
   {
     public OverwriteException(String message)
     {
@@ -33,7 +33,9 @@ public class Main_AbstractClassFileIOExceptions
     }
   }
   //-Inner Class
-  
+  //error: write(String) in FileAppender cannot implement write(String) in Writer
+  //       overridden method does not throw OverwriteException
+  //fix  : changing OverwriteException to extend IOException instead of Exception
   static class FileAppender extends Appender implements Writer
   {
     public void write(String text) throws OverwriteException, IOException

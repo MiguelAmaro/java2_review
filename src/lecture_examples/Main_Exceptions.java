@@ -1,4 +1,4 @@
-package lecture.examples;
+package com.lecture_examples.exceptions;
 
 public class Main 
 {
